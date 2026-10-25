@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>WOTRACA - Work and Travel Canada V2</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B2A8A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="WOTRACA">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icons/icon-192x192.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192x192.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+*{font-family:'Inter',sans-serif; -webkit-tap-highlight-color:transparent}
+body{overscroll-behavior:none; -webkit-user-select:none; user-select:none}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{-ms-overflow-style:none; scrollbar-width:none}
+.phone-frame{box-shadow:0 20px 60px rgba(0,0,0,0.25), 0 0 0 8px #1a1a1a, 0 0 0 10px #333}
+.screenshot-card{transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.screenshot-card:active{transform:scale(.96)}
+</style>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#F8F9FA] text-gray-900 antialiased">
+<!-- App Header - Native style, no browser chrome -->
+<header class="sticky top-0 z-50 bg-[#0B2A8A] text-white px-4 py-3 flex items-center justify-between shadow-lg" style="padding-top:env(safe-area-inset-top)">
+  <div class="flex items-center gap-3">
+    <img src="icons/icon-72x72.png" class="w-9 h-9 rounded-full bg-white p-0.5" alt="W">
+    <span class="font-extrabold tracking-widest text-lg">WOTRACA</span>
+  </div>
+  <a href="https://wa.me/12029772153" target="_blank" class="bg-white text-[#0B2A8A] px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-2">Contact</a>
+</header>
+
+<!-- Play Store style App Header Info -->
+<section class="bg-white px-4 py-5 border-b">
+  <div class="flex gap-4">
+    <img src="icons/icon-192x192.png" class="w-20 h-20 rounded-[18px] shadow-md" alt="icon">
+    <div class="flex-1">
+      <h1 class="font-bold text-[22px] leading-tight">WOTRACA - Work and Travel Canada V2</h1>
+      <p class="text-[#01875f] text-sm font-medium mt-1">Wotraca Visas et Emploi</p>
+      <div class="flex items-center gap-1 mt-2 text-sm">
+        <span class="text-gray-600">Annonces •</span><span class="text-gray-600">Achats intégrés</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between mt-6 text-center divide-x">
+    <div class="flex-1"><div class="flex justify-center items-center gap-1 font-bold">4,8 <span class="text-yellow-500">★</span></div><div class="text-xs text-gray-500">2,4 k avis</div></div>
+    <div class="flex-1"><div class="font-bold">10 K+</div><div class="text-xs text-gray-500">Téléchargements</div></div>
+    <div class="flex-1"><div class="font-bold">3+</div><div class="text-xs text-gray-500"><span class="border px-1">3+</span></div></div>
+    <div class="flex-1"><div class="font-bold">48 Mo</div><div class="text-xs text-gray-500">Taille</div></div>
+  </div>
+  <button id="installBtn" class="w-full mt-5 bg-[#01875f] text-white font-bold py-3.5 rounded-lg text-[15px] hidden">Installer</button>
+  <div class="w-full mt-5 bg-gray-100 text-gray-500 font-bold py-3.5 rounded-lg text-[15px] text-center" id="openAppInfo">✓ Installée - Ouvre en mode App (pas Chrome)</div>
+</section>
+
+<!-- Hero from your screenshot -->
+<section class="p-4">
+  <div class="bg-gradient-to-br from-[#081F5C] to-[#0B2A8A] rounded-[28px] p-6 text-white text-center shadow-xl relative overflow-hidden">
+    <div class="bg-white/15 inline-block px-4 py-1 rounded-full text-xs font-bold tracking-wider mb-4">PROGRAMME SPÉCIAL CANADA</div>
+    <h2 class="text-[28px] font-black leading-tight">VOYAGEZ D'ABORD,<br>PAYEZ APRÈS !</h2>
+    <p class="text-white/80 text-[15px] mt-3 leading-relaxed">Prise en charge intégrale à 100% de vos frais d'immigration, de vos billets et de votre installation.</p>
+    <div class="flex mt-6 border-t border-white/20 pt-4">
+      <div class="flex-1 border-r border-white/20"><div class="text-white/60 text-xs">Avance requise</div><div class="font-black text-xl">0 FCFA / $0</div></div>
+      <div class="flex-1"><div class="text-white/60 text-xs">Remboursement</div><div class="font-black text-xl">30% / mois</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Play Store Screenshots Section - EXACTLY like Play Store -->
+<section class="bg-white mt-2 py-5">
+  <div class="px-4 flex items-center justify-between">
+    <h3 class="font-bold text-[18px]">À propos de cette application</h3>
+    <button class="text-gray-400">→</button>
+  </div>
+  <p class="px-4 text-sm text-gray-600 mt-2 leading-relaxed line-clamp-3">Programme Voyagez d'abord, payez après (30% post-arrivée). Frais d'étude 48 000 FCFA remboursables si rejet. Prise en charge EIMT, CAQ, billet d'avion...</p>
+  
+  <div class="px-4 mt-6">
+    <h4 class="font-bold text-[16px] mb-3">Aperçu - Captures d'écran</h4>
+    <div class="flex gap-1 mb-3 text-sm">
+      <button class="bg-[#E8F0FE] text-[#1967D2] px-4 py-1.5 rounded-full font-medium">Téléphone</button>
+      <button class="text-gray-500 px-4 py-1.5">Tablette</button>
+    </div>
+  </div>
+
+  <!-- Horizontal scrollable screenshots like Play Store -->
+  <div class="relative">
+    <div id="screenshotsScroll" class="flex gap-3 overflow-x-auto no-scrollbar px-4 pb-4 snap-x snap-mandatory scroll-smooth">
+      
+      <div class="screenshot-card snap-start shrink-0">
+        <div class="phone-frame w-[210px] h-[440px] rounded-[26px] overflow-hidden bg-black relative">
+          <img src="screenshots/01-accueil-hero.jpg" class="w-full h-full object-cover object-top" alt="Accueil">
+        </div>
+        <p class="text-xs text-center mt-2 text-gray-600 font-medium">Accueil Officiel</p>
+      </div>
+
+      <div class="screenshot-card snap-start shrink-0">
+        <div class="phone-frame w-[210px] h-[440px] rounded-[26px] overflow-hidden bg-white relative">
+          <img src="screenshots/02-formulaire-eligibilite.jpg" class="w-full h-full object-cover object-top" alt="Formulaire">
+        </div>
+        <p class="text-xs text-center mt-2 text-gray-600 font-medium">Test d'Éligibilité</p>
+      </div>
+
+      <div class="screenshot-card snap-start shrink-0">
+        <div class="phone-frame w-[210px] h-[440px] rounded-[26px] overflow-hidden bg-white relative">
+          <img src="screenshots/03-analyse-13pourcent.jpg" class="w-full h-full object-cover object-top" alt="Analyse 13%">
+        </div>
+        <p class="text-xs text-center mt-2 text-gray-600 font-medium">Analyse en cours</p>
+      </div>
+
+      <div class="screenshot-card snap-start shrink-0">
+        <div class="phone-frame w-[210px] h-[440px] rounded-[26px] overflow-hidden bg-white relative">
+          <img src="screenshots/04-analyse-100pourcent.jpg" class="w-full h-full object-cover object-top" alt="100%">
+        </div>
+        <p class="text-xs text-center mt-2 text-gray-600 font-medium">Validation 100%</p>
+      </div>
+
+      <div class="screenshot-card snap-start shrink-0">
+        <div class="phone-frame w-[210px] h-[440px] rounded-[26px] overflow-hidden bg-white relative">
+          <img src="screenshots/05-paiement-fedapay.jpg" class="w-full h-full object-cover object-top" alt="Paiement">
+        </div>
+        <p class="text-xs text-center mt-2 text-gray-600 font-medium">Paiement Sécurisé</p>
+      </div>
+
+      <div class="screenshot-card snap-start shrink-0">
+        <div class="phone-frame w-[210px] h-[440px] rounded-[26px] overflow-hidden bg-white relative">
+          <img src="screenshots/08-contact-google.jpg" class="w-full h-full object-cover object-top" alt="Contact">
+        </div>
+        <p class="text-xs text-center mt-2 text-gray-600 font-medium">Contact Google</p>
+      </div>
+
+    </div>
+    <!-- Scroll buttons -->
+    <button onclick="document.getElementById('screenshotsScroll').scrollBy({left:-230,behavior:'smooth'})" class="absolute left-2 top-[48%] bg-white shadow-lg rounded-full w-8 h-8 flex items-center justify-center">‹</button>
+    <button onclick="document.getElementById('screenshotsScroll').scrollBy({left:230,behavior:'smooth'})" class="absolute right-2 top-[48%] bg-white shadow-lg rounded-full w-8 h-8 flex items-center justify-center">›</button>
+  </div>
+</section>
+
+<!-- Comment ça fonctionne -->
+<section class="bg-white mt-2 p-4">
+  <h3 class="font-bold text-lg flex items-center gap-2">💰 Comment ça fonctionne ?</h3>
+  <div class="mt-4 space-y-3">
+    <div class="bg-[#F0F4FF] p-4 rounded-2xl flex gap-3"><div class="bg-[#0B2A8A] text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold shrink-0">1</div><div><b>Préfinancement Total :</b> La compagnie WOTRACA finance l'intégralité de votre dossier d'immigration et votre billet d'avion.</div></div>
+    <div class="bg-[#F0F7FF] p-4 rounded-2xl flex gap-3"><div class="bg-[#0B2A8A] text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold shrink-0">2</div><div><b>Arrivée & Prise de poste :</b> Vous commencez votre travail au Canada et percevez votre salaire.</div></div>
+    <div class="bg-[#F0FFF4] p-4 rounded-2xl flex gap-3"><div class="bg-[#15803d] text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold shrink-0">3</div><div><b>Prélèvement Doux :</b> Remboursement 30% chaque fin de mois.</div></div>
+  </div>
+</section>
+
+<!-- Formulaire intégré (vrai formulaire qui reste dans l'app) -->
+<section id="candidature" class="bg-white mt-2 p-4">
+  <h3 class="font-bold text-lg">Test d'Éligibilité & Candidature</h3>
+  <form id="candForm" class="mt-4 space-y-4">
+    <input required placeholder="Nom & Prénom - Ex: Koudjo" class="w-full border rounded-full px-4 py-3.5 text-sm">
+    <input required type="email" placeholder="Adresse E-mail" class="w-full border rounded-full px-4 py-3.5 text-sm">
+    <input required type="number" placeholder="Votre Âge (26 à 52 ans)" min="26" max="52" class="w-full border rounded-full px-4 py-3.5 text-sm">
+    <select class="w-full border rounded-full px-4 py-3.5 text-sm bg-gray-50"><option>Français (Petit à Grand niveau)</option><option>Anglais</option></select>
+    <input placeholder="Métier Souhaité - Ex: Électricien" class="w-full border rounded-full px-4 py-3.5 text-sm">
+    <button type="submit" class="w-full bg-[#0B2A8A] text-white font-bold py-4 rounded-full flex items-center justify-center gap-2">✈ Soumettre ma candidature</button>
+  </form>
+  <!-- Progression like screenshot -->
+  <div id="progressBox" class="hidden mt-6 bg-white border rounded-[24px] p-5 shadow-xl">
+    <div class="w-16 h-16 bg-yellow-50 rounded-full flex items-center justify-center mx-auto text-3xl">⏳</div>
+    <h4 class="font-black text-center text-xl mt-4">Votre candidature est en cours d'analyse...</h4>
+    <p class="text-center text-sm text-gray-500 mt-2">Merci <span id="userName">Koudjo</span> ! Veuillez patienter <span class="text-[#0B2A8A] font-bold">30 secondes</span> sur l'application.</p>
+    <div class="bg-gray-50 rounded-2xl p-4 mt-4">
+      <div class="flex justify-between text-xs font-bold text-[#0B2A8A]"><span>PROGRESSION <span id="progText">0%</span></span><span id="restText">30S RESTANTS</span></div>
+      <div class="w-full bg-gray-200 h-3 rounded-full mt-2 overflow-hidden"><div id="progBar" class="bg-[#0B2A8A] h-full transition-all duration-500" style="width:0%"></div></div>
+      <div class="text-xs text-gray-500 mt-2" id="statusText">Vérification des postes disponibles...</div>
+    </div>
+    <button id="payBtn" class="hidden w-full bg-[#0B2A8A] text-white font-bold py-4 rounded-xl mt-4">PROCÉDER AU PAIEMENT DE DOSSIER (FEDAPAY)</button>
+    <p class="text-[11px] text-center text-gray-400 mt-3">Ne fermez pas l'application • Analyse automatique 30 secondes exactement</p>
+  </div>
+</section>
+
+<footer class="bg-white mt-6 p-6 text-center text-xs text-gray-400 border-t">
+  WOTRACA - Work and Travel Canada V2 • Ouvert 24h/24 • +1 (202) 977-2153<br>
+  Cette app s'ouvre en mode natif (pas dans Chrome) grâce au mode standalone.
+</footer>
+
+<a href="https://wa.me/12029772153" class="fixed bottom-6 right-4 bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl text-white text-2xl">💬</a>
+
+<script>
+// PWA Install logic - keeps app native (not Chrome)
+let deferredPrompt;
+const installBtn = document.getElementById('installBtn');
+const openInfo = document.getElementById('openAppInfo');
+
+window.addEventListener('beforeinstallprompt', (e)=>{
+  e.preventDefault();
+  deferredPrompt = e;
+  installBtn.classList.remove('hidden');
+  openInfo.classList.add('hidden');
+});
+
+installBtn?.addEventListener('click', async ()=>{
+  if(!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const {outcome} = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  installBtn.classList.add('hidden');
+});
+
+if(window.matchMedia('(display-mode: standalone)').matches){
+  installBtn?.classList.add('hidden');
+  openInfo.classList.remove('hidden');
+  openInfo.textContent = '✓ Mode App Natif Actif - Format Bleu (comme Facebook/WhatsApp)';
+}
+
+// Prevent opening in Chrome - intercept external links to stay in app
+document.addEventListener('click', e=>{
+  const a = e.target.closest('a');
+  if(a && a.href.startsWith('http') && !a.href.includes('wa.me') && !a.href.includes('fedapay')){
+    // Keep internal navigation inside app
+    if(a.href.includes(location.hostname) || a.href.includes('wotraca')){
+      e.preventDefault();
+      location.href = a.href;
+    }
+  }
+});
+
+// Form simulation 30s like screenshots
+document.getElementById('candForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = e.target[0].value || 'Koudjo';
+  document.getElementById('userName').textContent = name;
+  e.target.classList.add('hidden');
+  const box = document.getElementById('progressBox');
+  box.classList.remove('hidden');
+  let prog = 0;
+  const interval = setInterval(()=>{
+    prog += Math.random()*12;
+    if(prog>=100){prog=100; clearInterval(interval); document.getElementById('payBtn').classList.remove('hidden'); document.getElementById('statusText').textContent='Validation du dossier préfinancé WOTRACA...'}
+    document.getElementById('progBar').style.width = prog+'%';
+    document.getElementById('progText').textContent = Math.floor(prog)+'%';
+    document.getElementById('restText').textContent = Math.max(0,30-Math.floor(prog/3.4))+'S RESTANTS';
+  },800);
+  document.getElementById('payBtn').onclick = ()=> window.location.href='https://me.fedapay.com/wotraca-cana';
+});
+
+// Service Worker - essential for native-like behavior
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').then(()=>console.log('SW ok - mode App natif activé'));
+}
+</script>
+</body>
+</html>

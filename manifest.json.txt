@@ -1,0 +1,130 @@
+{
+  "name": "WOTRACA - Work and Travel Canada V2",
+  "short_name": "WOTRACA V2",
+  "description": "WOTRACA V2 - Voyagez d'abord, payez après ! Programme Spécial Canada - Prise en charge 100% - Version Bleue",
+  "start_url": "./index.html?utm_source=pwa-v2-bleu",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay",
+    "minimal-ui"
+  ],
+  "background_color": "#ffffff",
+  "theme_color": "#0B2A8A",
+  "orientation": "portrait-primary",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": [
+    "travel",
+    "business",
+    "work"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/01-accueil-hero.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Accueil - Voyagez d'abord, payez après"
+    },
+    {
+      "src": "screenshots/02-formulaire-eligibilite.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Test d'éligibilité"
+    },
+    {
+      "src": "screenshots/03-analyse-13pourcent.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Analyse de candidature"
+    },
+    {
+      "src": "screenshots/05-paiement-fedapay.jpg",
+      "sizes": "1080x1920",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Paiement sécurisé FedaPay"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Candidature",
+      "short_name": "Postuler",
+      "description": "Tester mon éligibilité",
+      "url": "./index.html#candidature",
+      "icons": [
+        {
+          "src": "icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Contact WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Contacter sur WhatsApp",
+      "url": "https://wa.me/12029772153",
+      "icons": [
+        {
+          "src": "icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
